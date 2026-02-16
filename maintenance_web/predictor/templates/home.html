@@ -1,23 +1,94 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Predictive Maintenance</title>
-</head>
-<body>
-    <h2>Predictive Maintenance System</h2>
+{% extends 'base.html' %}
+{% block content %}
 
-    <form method="post">
+<div class="text-center mb-12 fade-in">
+    <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+        AI Powered Machine Monitoring
+    </h2>
+    <p class="text-gray-400 mt-4">
+        Enter Machine Parameters Below
+    </p>
+</div>
+
+<div class="glass p-8 rounded-2xl shadow-xl max-w-3xl mx-auto fade-in">
+
+    <form method="POST">
         {% csrf_token %}
-        Cycle: <input type="number" step="any" name="cycle"><br><br>
-        Sensor 2: <input type="number" step="any" name="sensor_2"><br><br>
-        Sensor 3: <input type="number" step="any" name="sensor_3"><br><br>
-        Sensor 4: <input type="number" step="any" name="sensor_4"><br><br>
 
-        <button type="submit">Predict</button>
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div>
+                <label class="block text-gray-300 mb-2">Machine Cycle</label>
+                <input type="number" step="any" name="cycle"
+                    class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-cyan-500"
+                    required>
+            </div>
+
+            <div>
+                <label class="block text-gray-300 mb-2">Temperature</label>
+                <input type="number" step="any" name="temperature"
+                    class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-cyan-500"
+                    required>
+            </div>
+
+            <div>
+                <label class="block text-gray-300 mb-2">Pressure</label>
+                <input type="number" step="any" name="pressure"
+                    class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-cyan-500"
+                    required>
+            </div>
+
+            <div>
+                <label class="block text-gray-300 mb-2">Vibration</label>
+                <input type="number" step="any" name="vibration"
+                    class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-cyan-500"
+                    required>
+            </div>
+
+        </div>
+
+        <button type="submit"
+            class="w-full py-3 mt-6 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg font-bold hover:scale-105 transition">
+            Predict Machine Status
+        </button>
+
     </form>
 
-    {% if result %}
-        <h3>Result: {{ result }}</h3>
+</div>
+
+{% if result %}
+<div class="glass p-6 rounded-2xl mt-10 text-center max-w-3xl mx-auto fade-in">
+
+    <h2 class="text-lg text-gray-300">Prediction Result</h2>
+
+    {% if "FAILURE" in result %}
+        <p class="text-3xl font-bold text-red-400 mt-4 animate-pulse">
+            {{ result }}
+        </p>
+    {% else %}
+        <p class="text-3xl font-bold text-green-400 mt-4 animate-pulse">
+            {{ result }}
+        </p>
     {% endif %}
-</body>
-</html>
+
+</div>
+{% endif %}
+
+{% if risk is not None %}
+<div class="max-w-3xl mx-auto mt-6 fade-in">
+
+    <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
+        <div class="{% if risk > 50 %}bg-red-500{% elif risk > 25 %}bg-yellow-400{% else %}bg-green-500{% endif %} 
+                    h-4 rounded-full transition-all duration-700"
+             style="width: {{ risk }}%">
+        </div>
+    </div>
+
+    <p class="text-center mt-2 text-gray-400">
+        Risk Level: {{ risk }}%
+    </p>
+
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Predictive Maintenance AI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+            animation: bgShift 12s ease infinite alternate;
+        }
+
+        @keyframes bgShift {
+            from { background-position: left; }
+            to { background-position: right; }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body class="text-white min-h-screen relative overflow-x-hidden">
+
+    <!-- Glow Background Effect -->
+    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-cyan-500/10 to-purple-500/10 blur-3xl -z-10"></div>
+
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center p-6 border-b border-gray-700/40">
+        <h1 class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            Predictive Maintenance AI
+        </h1>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 mt-10">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
