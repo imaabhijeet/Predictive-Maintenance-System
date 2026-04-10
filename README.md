@@ -4,7 +4,7 @@
 https://predictive-maintenance-system-rdlf.onrender.com
 
 
-\## Overview
+\** Overview
 
 This project predicts equipment failure using machine learning techniques
 
@@ -26,7 +26,7 @@ based on historical sensor data.
 
 
 
-\## Project Structure
+\** Project Structure
 
 \- data/          → dataset
 
