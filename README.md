@@ -1,56 +1,96 @@
-\# Predictive Maintenance System
+# Predictive Maintenance System 🚀
 
 ## 🌐 Live Demo
 https://predictive-maintenance-system-rdlf.onrender.com
 
+---
 
-\## Overview
+## 📌 Overview
+Predictive Maintenance System is a machine learning-based web application that predicts equipment failures using historical sensor data. The system helps reduce downtime and improve maintenance planning through predictive analytics.
 
-This project predicts equipment failure using machine learning techniques
+---
 
-based on historical sensor data.
+## ✨ Features
+- Equipment failure prediction using ML models
+- Modern and responsive web interface
+- Risk score visualization
+- Data preprocessing and feature engineering
+- Real-time prediction support
+- Clean and user-friendly UI
 
+---
 
+## 🛠️ Tech Stack
 
-\## Tech Stack
+### Backend
+- Python
+- Flask / Django
+- Scikit-learn
 
-\- Python
+### Data Processing
+- Pandas
+- NumPy
 
-\- Pandas
+### Frontend
+- HTML
+- CSS
+- Bootstrap
 
-\- NumPy
+---
 
-\- Scikit-learn
+## ⚙️ Installation & Setup
 
-\- Flask
+### Clone Repository
+```bash
+git clone https://github.com/abhaysha9117-prog/Predictive-Maintenance-System.git
+cd Predictive-Maintenance-System
+```
 
-
-
-\## Project Structure
-
-\- data/          → dataset
-
-\- models/        → trained models
-
-\- notebooks/     → experiments
-
-\- maintenance\_web/ → web application
-
-\- test\_model.py  → model testing script
-
-
-
-\## How to Run
-
+### Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-python test\_model.py
+### Run Project
+```bash
+python test_model.py
+```
 
+---
 
+## 📊 Machine Learning Workflow
+1. Data Collection  
+2. Data Preprocessing  
+3. Feature Engineering  
+4. Model Training  
+5. Model Evaluation  
+6. Failure Prediction  
 
-\## Author
+---
 
-Abhay Sharma
+## 🎯 Objective
+The main objective of this project is to predict equipment failures before breakdowns occur, helping industries reduce maintenance costs and improve operational efficiency.
 
+---
 
+## 👨‍💻 Team Members
 
+### Team Leader
+- Abhay Sharma
+
+### Team Member
+- Abhijeet Singh
+
+---
+
+## 🚀 Future Improvements
+- IoT sensor integration
+- Advanced analytics dashboard
+- Deep learning models
+- Cloud deployment optimization
+- Email/SMS alert system
+
+---
+
+## ⭐ Support
+If you found this project useful, consider giving it a star on GitHub!
